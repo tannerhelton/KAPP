@@ -8,4 +8,4 @@ KU App for **EECS488**
 | Adam Jolles | Project Administrator |
 | Chris Stillman | Guy |
 | Troy Damico | SCRUM |
-| Thomas Gansner | |
+| Thomas Gansner | Also Guy|
