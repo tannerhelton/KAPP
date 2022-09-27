@@ -75,18 +75,17 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="Step CHRISSsssS">
+            <Text style={styles.highlight}>KaPP</Text>
           </Section>
-          <Section title="See Your Changes">
+          <Section title="Don't matta">
             <ReloadInstructions />
           </Section>
           <Section title="Debug">
             <DebugInstructions />
           </Section>
           <Section title="Learn More">
-            Read the docs to discover what to do next:
+            Read the docs to discover what to do next: - Sounds boring
           </Section>
           <LearnMoreLinks />
         </View>
