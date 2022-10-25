@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import type {Node} from 'react';
 import {
@@ -26,8 +18,6 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -55,7 +45,6 @@ const Section = ({children, title}): Node => {
 };
 
 import Homepage from './homepage/homepage.js';
-import MapView from 'react-native-maps';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -64,46 +53,7 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return (
-    // <MapView
-    //   initialRegion={{
-    //     latitude: 37.78825,
-    //     longitude: -122.4324,
-    //     latitudeDelta: 0.0922,
-    //     longitudeDelta: 0.0421,
-    //   }}
-    // />
-    <Homepage />
-    // <SafeAreaView style={backgroundStyle}>
-    //   <StatusBar
-    //     barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-    //     backgroundColor={backgroundStyle.backgroundColor}
-    //   />
-    //   <ScrollView
-    //     contentInsetAdjustmentBehavior="automatic"
-    //     style={backgroundStyle}>
-    //     <Header />
-    //     <View
-    //       style={{
-    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    //       }}>
-    //       <Section title="Step CHRISSsssS">
-    //         <Text style={styles.highlight}>KaPP</Text>
-    //       </Section>
-    //       <Section title="Don't matta">
-    //         <ReloadInstructions />
-    //       </Section>
-    //       <Section title="Debug">
-    //         <DebugInstructions />
-    //       </Section>
-    //       <Section title="Learn More">
-    //         Read the docs to discover what to do next: - Sounds boring
-    //       </Section>
-    //       <LearnMoreLinks />
-    //     </View>
-    //   </ScrollView>
-    // </SafeAreaView>
-  );
+  return <Homepage />;
 };
 
 const styles = StyleSheet.create({
