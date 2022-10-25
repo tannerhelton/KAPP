@@ -6,6 +6,6 @@ KU App for **EECS488**
 | -------- | -------- |
 | Tanner Helton | Project Manager |
 | Adam Jolles | Project Administrator |
-| Chris Stillman | Guy |
+| Chris Stillman | User Interface Coordinator |
 | Troy Damico | SCRUM |
 | Thomas Gansner | Also Guy|
