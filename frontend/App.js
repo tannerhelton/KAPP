@@ -54,6 +54,8 @@ const Section = ({children, title}): Node => {
   );
 };
 
+import Homepage from './homepage/homepage.js';
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -62,35 +64,36 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step CHRISSsssS">
-            <Text style={styles.highlight}>KaPP</Text>
-          </Section>
-          <Section title="Don't matta">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next: - Sounds boring
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Homepage />
+    // <SafeAreaView style={backgroundStyle}>
+    //   <StatusBar
+    //     barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+    //     backgroundColor={backgroundStyle.backgroundColor}
+    //   />
+    //   <ScrollView
+    //     contentInsetAdjustmentBehavior="automatic"
+    //     style={backgroundStyle}>
+    //     <Header />
+    //     <View
+    //       style={{
+    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
+    //       }}>
+    //       <Section title="Step CHRISSsssS">
+    //         <Text style={styles.highlight}>KaPP</Text>
+    //       </Section>
+    //       <Section title="Don't matta">
+    //         <ReloadInstructions />
+    //       </Section>
+    //       <Section title="Debug">
+    //         <DebugInstructions />
+    //       </Section>
+    //       <Section title="Learn More">
+    //         Read the docs to discover what to do next: - Sounds boring
+    //       </Section>
+    //       <LearnMoreLinks />
+    //     </View>
+    //   </ScrollView>
+    // </SafeAreaView>
   );
 };
 
