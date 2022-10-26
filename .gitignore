@@ -107,3 +107,6 @@ dist
 
 # macOS file system
 .DS_Store
+
+# macOS file icons
+Icon
