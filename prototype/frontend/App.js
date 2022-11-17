@@ -48,8 +48,34 @@ const App = () => {
             ),
           }}
         />
-        <Tab.Screen name="GPA" component={GPA} />
-        <Tab.Screen name="Events" component={Events} />
+        <Tab.Screen
+          name="GPA"
+          component={GPA}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons
+                name="calculator"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Events"
+          component={Events}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons
+                name="calendar"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
