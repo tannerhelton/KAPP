@@ -34,7 +34,20 @@ const App = () => {
             ),
           }}
         />
-        <Tab.Screen name="Map" component={Map} />
+        <Tab.Screen
+          name="Map"
+          component={Map}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons
+                name="map-search"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
         <Tab.Screen name="GPA" component={GPA} />
         <Tab.Screen name="Events" component={Events} />
       </Tab.Navigator>
