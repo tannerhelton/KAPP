@@ -38,7 +38,7 @@ const App = () => {
           name="Map"
           component={Map}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Map',
             tabBarIcon: ({color, size}) => (
               <MaterialCommunityIcons
                 name="map-search"
@@ -52,7 +52,7 @@ const App = () => {
           name="GPA"
           component={GPA}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'GPA Calculator',
             tabBarIcon: ({color, size}) => (
               <MaterialCommunityIcons
                 name="calculator"
@@ -66,7 +66,7 @@ const App = () => {
           name="Events"
           component={Events}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Events',
             tabBarIcon: ({color, size}) => (
               <MaterialCommunityIcons
                 name="calendar"
