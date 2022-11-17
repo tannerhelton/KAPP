@@ -59,7 +59,9 @@ const Section = ({children, title}): Node => {
 
 const Stack = createStackNavigator();
 
-const App: () => Node = () => {
+import Homepage from './src/homepage/Homepage';
+
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -76,7 +78,7 @@ const App: () => Node = () => {
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
-            component={Section}
+            component={Homepage}
             options={{title: 'Home'}}
           />
           <Stack.Screen
@@ -86,6 +88,7 @@ const App: () => Node = () => {
           />
         </Stack.Navigator>
       </NavigationContainer>
+      <Homepage />
     </SafeAreaView>
   );
 };
