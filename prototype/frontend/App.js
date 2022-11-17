@@ -5,6 +5,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Home from './src/Home';
 import Map from './src/Map';
@@ -23,7 +24,16 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} options={{tabBarBadge: 3}} />
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+          }}
+        />
         <Tab.Screen name="Map" component={Map} />
         <Tab.Screen name="GPA" component={GPA} />
         <Tab.Screen name="Events" component={Events} />
