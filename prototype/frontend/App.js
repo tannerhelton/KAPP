@@ -23,7 +23,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={Home} options={{tabBarBadge: 3}} />
         <Tab.Screen name="Map" component={Map} />
         <Tab.Screen name="GPA" component={GPA} />
         <Tab.Screen name="Events" component={Events} />
