@@ -26,7 +26,7 @@ export default class Events extends React.Component {
     return (
       <ScrollView>
         {this.state.events.map(event => (
-          <ItemDisplay eventData={event} />
+          <ItemDisplay key={event.id} eventData={event} />
         ))}
       </ScrollView>
     );
