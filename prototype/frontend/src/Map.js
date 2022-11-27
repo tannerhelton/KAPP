@@ -29,7 +29,6 @@ export default class Map extends React.Component {
 
   onRegionChange(region) {
     this.setState({region});
-    console.log(region);
   }
 
   render() {
