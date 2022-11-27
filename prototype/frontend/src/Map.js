@@ -3,29 +3,62 @@ import MapView from 'react-native-maps';
 import {Marker} from 'react-native-maps';
 import {StyleSheet, Text, View, Dimensions} from 'react-native';
 
-export default function Map() {
-  var markers = [
-    {
-      latitude: 38.95863382686692,
-      longitude: -95.24767470289626,
-      title: 'Foo Place',
-      subtitle: '1234 Foo Drive',
-    },
-  ];
-  return (
-    <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        initialRegion={{
-          latitude: 38.95863382686692,
-          longitude: -95.24767470289626,
-          latitudeDelta: 0.02,
-          longitudeDelta: 0.02,
-        }}
-        annotations={markers}
-      />
-    </View>
-  );
+export default class Map extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentRegion: {
+        latitude: 38.958548396598786,
+        longitude: -95.24757287968642,
+        latitudeDelta: 0.002,
+        longitudeDelta: 0.002,
+      },
+    };
+  }
+
+  getInitialState() {
+    return {
+      region: {
+        latitude: 38.958548396598786,
+        longitude: -95.24757287968642,
+        latitudeDelta: 0.002,
+        longitudeDelta: 0.002,
+      },
+    };
+  }
+
+  onRegionChange(region) {
+    this.setState({region});
+    console.log(region);
+  }
+
+  render() {
+    var markers = [
+      {
+        latitude: 38.958548396598786,
+        longitude: -95.24757287968642,
+        title: 'Strong Hall',
+        subtitle: 'Strong Hall, 1450 Jayhawk Blvd, Lawrence, KS 66045',
+      },
+    ];
+    return (
+      <View style={styles.container}>
+        <MapView
+          style={styles.map}
+          region={this.state.region}
+          onRegionChange={() => this.onRegionChange.bind(this)}>
+          {markers.map((marker, index) => (
+            <Marker
+              key={index}
+              coordinate={marker.latlng}
+              title={marker.title}
+              description={marker.description}
+            />
+          ))}
+        </MapView>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
