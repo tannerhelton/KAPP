@@ -43,6 +43,12 @@ export default class Map extends React.Component {
     return (
       <View style={styles.container}>
         <MapView
+          initialRegion={{
+            latitude: 38.958548396598786,
+            longitude: -95.24757287968642,
+            latitudeDelta: 0.02,
+            longitudeDelta: 0.02,
+          }}
           style={styles.map}
           region={this.state.region}
           onRegionChange={() => this.onRegionChange.bind(this)}>
