@@ -35,10 +35,9 @@ export default class Map extends React.Component {
   render() {
     var markers = [
       {
-        latitude: 38.958548396598786,
-        longitude: -95.24757287968642,
+        latlng: {latitude: 38.958548396598786, longitude: -95.24757287968642},
         title: 'Strong Hall',
-        subtitle: 'Strong Hall, 1450 Jayhawk Blvd, Lawrence, KS 66045',
+        description: 'Strong Hall, 1450 Jayhawk Blvd, Lawrence, KS 66045',
       },
     ];
     return (
