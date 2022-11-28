@@ -57,7 +57,9 @@ export default class GPA extends React.Component {
     if (grade.length > 1) {
       switch (grade.substring(1, 2)) {
         case '+':
-          points += 0.3;
+          if (points < 4) {
+            points += 0.3;
+          }
           break;
         case '-':
           points -= 0.3;
