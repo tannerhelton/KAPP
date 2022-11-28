@@ -77,15 +77,22 @@ export default class GPA extends React.Component {
     let totalHours = 0;
     let totalGradePoints = 0;
     const regAF = new RegExp('^[A-F]$');
+    const regNUM = new RegExp('^[0-9]$');
     courses.forEach(course => {
       if (
         course.courseGrade.length > 2 ||
         course.courseGrade.length < 1 ||
         regAF.test(course.courseGrade.substring(0, 1)) === false ||
-        (course.courseGrade.substring(1) !== '+' &&
+        (course.courseGrade.length > 1 &&
+          course.courseGrade.substring(1) !== '+' &&
           course.courseGrade.substring(1) !== '-')
       ) {
         alert('Invalid grade on course: ' + course.courseName);
+        return;
+      }
+
+      if (regNUM.test(course.courseHours) === false) {
+        alert('Invalid hours on course: ' + course.courseName);
         return;
       }
       totalHours += Number(course.courseHours);
