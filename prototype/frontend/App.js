@@ -28,6 +28,7 @@ const App = () => {
           name="Home"
           component={Home}
           options={{
+            title: 'KAPP',
             tabBarLabel: 'Home',
             tabBarIcon: ({color, size}) => (
               <MaterialCommunityIcons name="home" color={color} size={size} />
