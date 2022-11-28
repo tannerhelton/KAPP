@@ -22,7 +22,7 @@ export default class GPA extends React.Component {
   };
 
   gradeChange = text => {
-    this.setState({courseGrade: text});
+    this.setState({courseGrade: text.toUpperCase()});
   };
 
   addCourse = () => {
@@ -67,7 +67,6 @@ export default class GPA extends React.Component {
           break;
       }
     }
-    console.log('POINTS: ' + points);
     return points;
   };
 
@@ -75,13 +74,23 @@ export default class GPA extends React.Component {
     const {courses} = this.state;
     let totalHours = 0;
     let totalGradePoints = 0;
+    const regAF = new RegExp('^[A-F]$');
     courses.forEach(course => {
+      if (
+        course.courseGrade.length > 2 ||
+        course.courseGrade.length < 1 ||
+        regAF.test(course.courseGrade.substring(0, 1)) === false ||
+        (course.courseGrade.substring(1) !== '+' &&
+          course.courseGrade.substring(1) !== '-')
+      ) {
+        alert('Invalid grade on course: ' + course.courseName);
+        return;
+      }
       totalHours += Number(course.courseHours);
       totalGradePoints +=
         this.getGradePoints(course.courseGrade) * Number(course.courseHours);
     });
     this.setState({gpa: totalGradePoints / totalHours});
-    console.log(totalGradePoints / totalHours);
   };
 
   render() {
@@ -105,6 +114,7 @@ export default class GPA extends React.Component {
           style={styles.input}
           onChangeText={this.hoursChange}
           value={this.courseHours}
+          keyboardType="numeric"
         />
         <Text>
           Course Grade (Only enter letter and symbol: A+, B, C-, etc.):
